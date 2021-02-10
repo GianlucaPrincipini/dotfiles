@@ -134,3 +134,11 @@ source ~/.cache/wal/colors-tty.sh
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# xclip aliases for rapid copy paste in terminal 
+alias "c=xclip"
+alias "v=xclip -o"
+alias "vim=nvim"
+alias "yarn=yarnpkg"
+
+export PATH=$PATH:$HOME/minishift
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
