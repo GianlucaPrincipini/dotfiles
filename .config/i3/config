@@ -213,7 +213,7 @@ bindsym $mod+r mode "resize"
 assign [class="Teams"] $ws1
 assign [class="Thunderbird"] $ws1
 assign [class="Firefox"] $ws2
-assign [class="jetbrains-idea-ce"] $ws3
+#assign [class="jetbrains-idea-ce"] $ws3
 for_window [class="Spotify"] move container to workspace $ws10
 exec --no-startup-id teams
 exec --no-startup-id thunderbird
