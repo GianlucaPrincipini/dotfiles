@@ -1,20 +1,34 @@
-source ~/.vimrc 
-
+set NERDTree
+set number
+set relativenumber
+set ideajoin
+let mapleader = ","
+let leader = ","
 nnoremap L $
 nnoremap H ^
 noremap . :
 
-nnoremap ,e :action SearchEverywhere<CR>
-nnoremap ,g :action FindInPath<CR>
-nnoremap ,s :action FileStructurePopup<CR>
+imap jj <Esc>
+nnoremap <space>s :action SearchEverywhere<CR>
+nnoremap ,f :action FindInPath<CR>
+vnoremap ,f :action FindInPath<CR>
+nnoremap ,r :action RefactoringMenu<CR>
 
+" Fast codebase navigation
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gs :action GotoSuperMethod<CR>
 nnoremap gi :action GotoImplementation<CR>
+nnoremap gt :action GotoTest<CR>
 nnoremap gb :action JumpToLastChange<CR>
+nnoremap gr :action FindUsages<CR>
 
-nnoremap U :action FindUsages<CR>
+" Refactoring actions
+vnoremap ,cs :action ChangeSignature<CR>
+nnoremap ,cs :action ChangeSignature<CR>
+nnoremap ,em :action ExtractMethod<CR>
+vnoremap ,em :action ExtractMethod<CR>
 nnoremap R :action RenameElement<CR>
+vnoremap R :action RenameElement<CR>
 
 nnoremap == :action ReformatCode<CR>
 vnoremap == :action ReformatCode<CR>
@@ -22,13 +36,27 @@ vnoremap == :action ReformatCode<CR>
 nnoremap cc :action CommentByLineComment<CR>
 vnoremap cc :action CommentByLineComment<CR>
 
-nnoremap <C-CR> :action ShowIntentionActions<CR>
+" Ide features for autocompletion and fixes
+nnoremap ,qf :action QuickFixes<CR>
+vnoremap ,qf :action QuickFixes<CR>
+nnoremap ,cl :action ShowIntentionActions<CR>
+vnoremap ,cl :action ShowIntentionActions<CR>
+nnoremap ,n :action GotoNextError<CR>
+nnoremap ,p :action GotoPreviousError<CR>
 
-nnoremap ,a :action GotoAction<CR>
-vnoremap ,a :action GotoAction<CR>
+nnoremap <space>c :action GotoAction<CR>
+vnoremap <space>c :action GotoAction<CR>
+nnoremap <space>o :action FileStructurePopup<CR>
+vnoremap <space>o :action FileStructurePopup<CR>
 
+" View management
 nnoremap ,v :action SplitVertically<CR>
 vnoremap ,v :action SplitVertically<CR>
 nnoremap ,h :action SplitHorizontally<CR>
 vnoremap ,h :action SplitHorizontally<CR>
+
+" Debug
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+vnoremap ,b :action ToggleLineBreakpoint<CR>
 nnoremap \\ :action AceAction<CR>
+source /Users/gianluca/.config/nvim/nerdtree-mappings.vim
