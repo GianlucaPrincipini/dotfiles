@@ -1,3 +1,5 @@
+" defaults write -g ApplePressAndHoldEnabled 0
+
 set NERDTree
 set number
 set relativenumber
